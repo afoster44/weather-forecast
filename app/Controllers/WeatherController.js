@@ -3,21 +3,20 @@ import { ProxyState } from "../AppState.js";
 
 
 //private
-function _draw(){
-        let forecast = ProxyState.forecast
-        let template = ""
-        forecast.forEach(fore => template += fore.Template)
-        // console.log(template)
-        document.getElementById('forecast').innerHTML = template
-        console.log(ProxyState.forecast)
+function _draw() {
+    let forecasts = ProxyState.forecasts
+    let template = ""
+    forecasts.forEach(fore => template += fore.Template)
+    // console.log(template)
+    document.getElementById('forecast').innerHTML = template
+    console.log(ProxyState.forecasts)
 }
 
 
 //public
 export default class WeatherController {
-    constructor(){
-        ProxyState.on("forecast", _draw)
-        _draw()
+    constructor() {
+        ProxyState.on("forecasts", _draw)
         console.log('hello from the weather controller')
     }
 

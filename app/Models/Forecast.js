@@ -1,24 +1,29 @@
 export default class Forecast {
     constructor(data) {
-        this.temperature = data.temp,
-        this.feelsLike = data.feels_like,
-        this.humidity = data.humidity,
-        this.wind = data.wind_speed
+        this.temperature = data.temp.day,
+            this.feelsLike = data.feels_like.day,
+            this.humidity = data.humidity,
+            this.wind = data.wind_speed,
+            this.date = new Date(data.dt * 1000).toString().split(' ')[0]
     }
 
     get Template() {
 
         return /*html*/`
-        <div class="card p-2 forecast">
-            <div class="row">
-                <div class = col-sm-6>
-                ${this.temperature}
-                <div/>
-                <div class = col-sm-6>
-                ${this.feelsLike}
-                <div/>
-            <div/>
+        <div class="card col-sm-12">
+        <div class="row"> 
+        <div class="col-sm-12">
+        <p>${this.date}:</div>
+        <div class ="col-sm-12 col-lg-6">
+         <p>Temperature: <span>${this.temperature}</span></p>
+                    
+            </div>
+            <div class = "col-sm-12 col-lg-6">
+            <p>Feels like: <span>${this.feelsLike}</span></p>
+            </div>
+        </div>       
         </div>
+                
         `
     }
 }

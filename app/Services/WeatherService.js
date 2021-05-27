@@ -1,3 +1,5 @@
+import { ProxyState } from '../AppState.js'
+import Forecast from '../Models/Forecast.js'
 import { api } from './AxiosService.js'
 
 
@@ -8,8 +10,10 @@ class WeatherService {
 
     async getForecast(forecast) {
         console.log(forecast, "from the service")
-        const res = await api.get(`onecall?lat=${forecast.lat}&lon=${forecast.lon}&exclude=hourly,daily&appid=7c3a1d0cce21a3e5b83489c0de5b50b8`)
-        console.log(res)
+        const res = await api.get(`onecall?lat=${forecast.lat}&lon=${forecast.lon}&exclude=hourly&units=imperial&appid=7c3a1d0cce21a3e5b83489c0de5b50b8`)
+        console.log("response data", res.data)
+        ProxyState.forecasts = res.data.daily.map(d => new Forecast(d))
+        console.log(ProxyState.forecasts)
     }
 
 }
