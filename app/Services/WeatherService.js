@@ -1,14 +1,15 @@
-import { weatherApi } from './AxiosService.js'
+import { api } from './AxiosService.js'
 
 
 class WeatherService {
-    constructor(){
+    constructor() {
         console.log('hello from the weather service!')
     }
 
     async getForecast(forecast) {
-        const res = await weatherApi.get(`onecall?lat=${forecast.lat}&lon=${forecast.lon}&exclude=hourly,daily&appid={API key}`)
-        console.log(res.data)
+        console.log(forecast, "from the service")
+        const res = await api.get(`onecall?lat=${forecast.lat}&lon=${forecast.lon}&exclude=hourly,daily&appid=7c3a1d0cce21a3e5b83489c0de5b50b8`)
+        console.log(res)
     }
 
 }

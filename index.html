@@ -19,30 +19,32 @@
             </a>
         </nav>
     </header>
-    <div id="app"></div>
+    <!-- <div id="app"></div> -->
     <main class="container-fluid">
         <div class="row">
-            <div class="col-12 text-center">
+            <div class="col-sm-12 text-center">
                 <h2>Please provide your longitude and latitude for a 7 day weather forecast!</h2>
             </div>
-            <div class="col-8 m-auto d-flex justify-content-center align-items-center">
-                <form class="form-inline" onsubmit="app.weatherController.getForecast(event)">
-                    <div class="form-group m-2">
-                        <input type="text" name="lon" id="lon" class="form-control" placeholder="Longitude"
-                            aria-describedby="helpId">
-                    </div>
+            <div class="col-sm-12 m-auto d-flex justify-content-center align-items-center">
+                <form class="form" onsubmit="app.weatherController.getForecast(event)">
                     <div class="form-group m-2">
                         <input type="text" name="lat" id="lat" class="form-control" placeholder="Latitude"
                             aria-describedby="helpId">
                     </div>
-                    <button class="btn btn-info" type="submit.prevent ">Create</button>
+                    <div class="form-group m-2">
+                        <input type="text" name="lon" id="lon" class="form-control" placeholder="Longitude"
+                            aria-describedby="helpId">
+                    </div>
+                    <div class="col-sm-8 m-auto d-flex justify-content-center align-items-center">
+                        <button class="btn btn-info" type="submit.prevent ">Create</button>
+                    </div>
                 </form>
             </div>
         </div>
-            
-            <!-- forecast will go below! -->
-            <div id="forecast"></div>
-            
+
+        <!-- forecast will go below! -->
+        <div id="forecast"></div>
+
     </main>
     <footer class="container-fluid bg-dark text-light">
         <div class="row text-center">

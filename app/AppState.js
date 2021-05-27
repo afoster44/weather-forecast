@@ -6,7 +6,7 @@ import { isValidProp } from "./Utils/isValidProp.js"
 class AppState extends EventEmitter {
   /** @type {Value[]} */
   values = []
-  /** @type {Forecast} */
+  /** @type {Forecast[]} */
   forecast = []
 }
 
