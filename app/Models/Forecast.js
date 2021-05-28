@@ -4,7 +4,7 @@ export default class Forecast {
             this.feelsLike = data.feels_like.day,
             this.humidity = data.humidity,
             this.wind = data.wind_speed,
-            this.date = new Date(data.dt * 1000).toString().split(' ')[0]
+            this.date = new Date(data.dt * 1000).toString().slice(0, 15)
     }
 
     get Template() {
