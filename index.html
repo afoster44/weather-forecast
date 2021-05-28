@@ -26,18 +26,18 @@
             <div class="col-sm-12 m-auto">
                 <h2>Please provide your longitude and latitude for a 7 day weather forecast!</h2>
             </div>
-            <div class="col-sm-12 m-auto d-flex justify-content-center align-items-center">
-                <form class="form" onsubmit="app.weatherController.getForecast(event)">
-                    <div class="form-group m-2">
+            <div class="col-sm-12 m-auto">
+                <form class="form-inline" onsubmit="app.weatherController.getForecast(event)">
+                    <div class="form-group">
                         <input type="text" name="lat" id="lat" class="form-control" placeholder="Latitude"
                             aria-describedby="helpId">
                     </div>
-                    <div class="form-group m-2">
+                    <div class="form-group">
                         <input type="text" name="lon" id="lon" class="form-control" placeholder="Longitude"
                             aria-describedby="helpId">
                     </div>
-                    <div class="col-sm-8 m-auto">
-                        <button class="btn btn-info" type="submit ">Create</button>
+                    <div class="form-group">
+                        <button class="btn btn-info" type="submit ">Search</button>
                     </div>
                 </form>
             </div>

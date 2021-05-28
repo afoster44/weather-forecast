@@ -9,13 +9,8 @@ gorillamind-weatherapi
 > npm run serve
 ```
 
-### AuthConfig
+## Following code paths
 
-Fill in your AuthConfig with keys from [Auth0](https://auth0.com/)
-
-```javascript
-export const domain = '' 
-export const clientId = '' 
-export const audience = '' 
-```
-"# weather-forecast" 
+---
+Please note that all controllers are registered via main.js. To hook up a controller simply export default class *Controller* and create a new instance in the main.js. From there you will be able to create a div with an id="app.controllerName.functionName".
+---
