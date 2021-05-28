@@ -1,11 +1,37 @@
+body {
+    min-height: 100vh;
+    background-color: dimgrey;
+}
+
 .container {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  background-color: aliceblue;
+  background-color: dimgrey;
 }
+
+@media (min-width: 576px) {
+        .container {
+      max-width: 540px;
+    }
+  }
+  @media (min-width: 768px) {
+        .container {
+      max-width: 720px;
+    }
+  }
+  @media (min-width: 992px) {
+        .container {
+      max-width: 960px;
+    }
+  }
+  @media (min-width: 1200px) {
+        .container {
+      max-width: 1140px;
+    }
+  }
 
 .row {
     display: flex;
@@ -35,4 +61,19 @@
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
+  }
+
+  .hot-border {
+      border: darkred;
+      border-style: solid;
+  }
+
+  .cool-border {
+      border: deepskyblue;
+      border-style: solid;
+
+  }
+
+  .margin-top {
+      margin-top: 3rem;
   }

@@ -10,7 +10,7 @@ export default class Forecast {
     get Template() {
 
         return /*html*/`
-        <div class="card col-sm-12">
+        <div class="${this.temperature > 80 ? "hot-border" : "cool-border"} col-sm-12 margin-top">
         <div class="row"> 
         <div class="col-sm-12">
         <p>${this.date}:</div>
