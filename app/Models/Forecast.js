@@ -1,4 +1,7 @@
+//here we will set up the forecast class...this will be the definition of our object to map to when we make the call to our API
 export default class Forecast {
+   
+   //assuming that data is already an incoming object...if it was not already an object you could say constructor({data})
     constructor(data) {
         this.temperature = data.temp.day,
             this.feelsLike = data.feels_like.day,
@@ -7,6 +10,8 @@ export default class Forecast {
             this.direction = data.wind_deg,
             this.date = new Date(data.dt * 1000).toString().slice(0, 15)
     }
+
+    //template will be built and injected from the weather controller in the _draw function...go to the weather controller for the _draw function
 
     get Template() {
 
