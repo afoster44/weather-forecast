@@ -5,17 +5,20 @@ html {
 body {
     min-height: 100vh;
     max-width: 100%;
-    overflow-x: hidden;
     background-color:#ffffff;
+    background-image: url("https://www.thoughtco.com/thmb/69TU_MD-VIz-QoqcXXvrmm92a0c=/1885x1414/smart/filters:no_upscale()/GettyImages-993959156-9c2533b1ed7a42a2a148b5d30f0340eb.jpg");
+    background-size: cover;
 }
 
 .container {
-  
+  min-height: 100vh;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
   background-color:#ffffff;
+  background-image: url("https://arizonaoddities.com/wp-content/uploads/2012/06/Clouds.jpg");
+    background-size: cover;
 }
 
 @media (min-width: 576px) {
@@ -260,4 +263,8 @@ body {
   img {
     max-width: 75px;
     max-height: 20px;
+  }
+
+  .bg-light {
+    background-color: #ffffff;
   }

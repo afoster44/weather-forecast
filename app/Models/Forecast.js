@@ -3,8 +3,9 @@ export default class Forecast {
    
    //assuming that data is already an incoming object...if it was not already an object you could say constructor({data})
     constructor(data) {
-        this.temperature = data.temp.day,
-            this.feelsLike = data.feels_like.day,
+        this.max = data.temp.max,
+            this.min = data.temp.min,
+            this.feelsLike = data.feels_like.day
             this.humidity = data.humidity,
             this.wind = data.wind_speed,
             this.direction = data.wind_deg,
@@ -17,13 +18,14 @@ export default class Forecast {
     get Template() {
 
         return /*html*/`
-        <div class="${this.temperature >= 80 ? "hot-border" : ""} ${this.temperature >= 70 && this.temperature <= 79 ? "mild-border" : ""}
-        ${this.temperature <= 69 ? "cool-border" : ""} col-sm-4 margin-top margin-x">
+        <div class="${this.max >= 80 ? "hot-border" : ""} ${this.max >= 70 && this.max <= 79.99 ? "mild-border" : ""}
+        ${this.max <= 69.99 ? "cool-border" : ""} col-sm-4 m-auto margin-top bg-light">
         <div class="row"> 
         <div class="col-sm-12">
-        <p>${this.date}: <img src="${this.weather.toLowerCase() === "clouds" ? "https://png.pngtree.com/png-vector/20190214/ourlarge/pngtree-vector-cloudy-icon-png-image_450295.jpg" : "http://simpleicon.com/wp-content/uploads/sun.png"}" alt="" srcset=""></div>
+        <p>${this.date}: ${this.weather} <img src="${this.weather.toLowerCase() === "clouds" ? "https://png.pngtree.com/png-vector/20190214/ourlarge/pngtree-vector-cloudy-icon-png-image_450295.jpg" : "http://simpleicon.com/wp-content/uploads/sun.png"}" alt="" srcset=""></div>
         <div class ="col-sm-12 col-lg-6">
-         <p>Temperature: <span>${this.temperature}</span>F</p>
+         <p>H: <span>${this.max}</span>F</p>
+         <p>L: <span>${this.min}</span>F</p>
                     
             </div>
             <div class = "col-sm-12 col-lg-6">
