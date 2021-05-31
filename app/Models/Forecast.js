@@ -28,7 +28,7 @@ export default class Forecast {
             <p>Feels like: <span>${this.feelsLike}</span>F</p>
             </div>
             <div class = "col-sm-12 col-lg-6">
-            <p>Wind speed: <span> ${this.wind}</span> MPH</p>
+            <p>Wind speed: <span> ${this.wind}</span> <img src="${this.wind > 10 ? "https://png.pngtree.com/png-vector/20190215/ourlarge/pngtree-vector-wind-icon-png-image_537132.jpg" : " "}" alt="" srcset=""> MPH <i class="${this.direction >= 0 && this.direction <= 89 || this.direction === 360 ? "fa fa-arrow-up" : ""}${this.direction >= 90 && this.direction <=179 ? "fa fa-arrow-right" : ""} ${this.direction >= 180 && this.direction <=269 ? "fa fa-arrow-down" : ""} ${this.direction >= 270 && this.direction <= 359 ? "fa fa-arrow-left" : ""}" aria-hidden="true"></i></p>
             </div>
         </div>       
         </div>
