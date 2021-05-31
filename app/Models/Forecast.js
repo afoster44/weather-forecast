@@ -8,6 +8,7 @@ export default class Forecast {
             this.humidity = data.humidity,
             this.wind = data.wind_speed,
             this.direction = data.wind_deg,
+            this.weather = data.weather[0].main,
             this.date = new Date(data.dt * 1000).toString().slice(0, 15)
     }
 
@@ -16,10 +17,11 @@ export default class Forecast {
     get Template() {
 
         return /*html*/`
-        <div class="${this.temperature > 80 ? "hot-border" : "cool-border"} col-sm-12 margin-top">
+        <div class="${this.temperature >= 80 ? "hot-border" : ""} ${this.temperature >= 70 && this.temperature <= 79 ? "mild-border" : ""}
+        ${this.temperature <= 69 ? "cool-border" : ""} col-sm-4 margin-top margin-x">
         <div class="row"> 
         <div class="col-sm-12">
-        <p>${this.date}:</div>
+        <p>${this.date}: <img src="${this.weather.toLowerCase() === "clouds" ? "https://png.pngtree.com/png-vector/20190214/ourlarge/pngtree-vector-cloudy-icon-png-image_450295.jpg" : "http://simpleicon.com/wp-content/uploads/sun.png"}" alt="" srcset=""></div>
         <div class ="col-sm-12 col-lg-6">
          <p>Temperature: <span>${this.temperature}</span>F</p>
                     
