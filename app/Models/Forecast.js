@@ -19,22 +19,17 @@ export default class Forecast {
 
         return /*html*/`
         <div class="${this.max >= 80 ? "hot-border" : ""} ${this.max >= 70 && this.max <= 79.99 ? "mild-border" : ""}
-        ${this.max <= 69.99 ? "cool-border" : ""} col-sm-4 m-auto margin-top bg-light">
-        <div class="row"> 
-        <div class="col-sm-12">
-        <p>${this.date}: ${this.weather} <img src="${this.weather.toLowerCase() === "clouds" ? "https://png.pngtree.com/png-vector/20190214/ourlarge/pngtree-vector-cloudy-icon-png-image_450295.jpg" : "http://simpleicon.com/wp-content/uploads/sun.png"}" alt="" srcset=""></div>
-        <div class ="col-sm-12 col-lg-6">
-         <p>H: <span>${this.max}</span>F</p>
-         <p>L: <span>${this.min}</span>F</p>
-                    
-            </div>
-            <div class = "col-sm-12 col-lg-6">
-            <p>Feels like: <span>${this.feelsLike}</span>F</p>
-            </div>
-            <div class = "col-sm-12 col-lg-6">
-            <p>Wind speed: <span> ${this.wind}</span> <img src="${this.wind > 10 ? "https://png.pngtree.com/png-vector/20190215/ourlarge/pngtree-vector-wind-icon-png-image_537132.jpg" : " "}" alt="" srcset=""> MPH <i class="${this.direction >= 0 && this.direction <= 89 || this.direction === 360 ? "fa fa-arrow-up" : ""}${this.direction >= 90 && this.direction <=179 ? "fa fa-arrow-right" : ""} ${this.direction >= 180 && this.direction <=269 ? "fa fa-arrow-down" : ""} ${this.direction >= 270 && this.direction <= 359 ? "fa fa-arrow-left" : ""}" aria-hidden="true"></i></p>
-            </div>
-        </div>       
+            ${this.max <= 69.99 ? "cool-border" : ""} col-sm-4 m-auto margin-bottom bg-light">
+            <div class="row"> 
+                <div class="col-sm-12">
+                    <h1>${this.date}: ${this.weather} <img src="${this.weather.toLowerCase() === "clouds" ? "https://png.pngtree.com/png-vector/20190214/ourlarge/pngtree-vector-cloudy-icon-png-image_450295.jpg" : ""} ${this.weather.toLowerCase() === "clear" ? "http://simpleicon.com/wp-content/uploads/sun.png": ""} ${this.weather.toLowerCase() === "rain" ? "https://image.flaticon.com/icons/png/512/106/106059.png": ""} " alt="" srcset=""></h1></div>
+                    <div class ="col-sm-12">
+                    <p>H: <span>${this.max}</span>F</p>
+                    <p>L: <span>${this.min}</span>F</p>
+                    <p>Feels like: <span>${this.feelsLike}</span>F</p>  
+                    <p>Wind speed: <span> ${this.wind}</span> <img src="${this.wind > 10 ? "https://png.pngtree.com/png-vector/20190215/ourlarge/pngtree-vector-wind-icon-png-image_537132.jpg" : " "}" alt="" srcset=""> MPH <i class="${this.direction >= 0 && this.direction <= 89 || this.direction === 360 ? "fa fa-arrow-up" : ""}${this.direction >= 90 && this.direction <=179 ? "fa fa-arrow-right" : ""} ${this.direction >= 180 && this.direction <=269 ? "fa fa-arrow-down" : ""} ${this.direction >= 270 && this.direction <= 359 ? "fa fa-arrow-left" : ""}" aria-hidden="true"></i></p>    
+                </div>
+            </div>       
         </div>
                 
         `
