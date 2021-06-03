@@ -19,7 +19,7 @@ export default class Forecast {
 
         return /*html*/`
         <div class="${this.max >= 80 ? "hot-border" : ""} ${this.max >= 70 && this.max <= 79.99 ? "mild-border" : ""}
-            ${this.max <= 69.99 ? "cool-border" : ""} col-sm-4 m-auto margin-bottom bg-light">
+            ${this.max <= 69.99 ? "cool-border" : ""} col-sm-3  margin-x margin-bottom">
             <div class="row"> 
                 <div class="col-sm-12">
                     <h1 id="dateWeather" aria-describedby="dateWeather">${this.date}: ${this.weather} <img src="${this.weather.toLowerCase() === "clouds" ? "https://png.pngtree.com/png-vector/20190214/ourlarge/pngtree-vector-cloudy-icon-png-image_450295.jpg" : ""} ${this.weather.toLowerCase() === "clear" ? "http://simpleicon.com/wp-content/uploads/sun.png" : ""} ${this.weather.toLowerCase() === "rain" ? "https://image.flaticon.com/icons/png/512/106/106059.png" : ""} " alt="" srcset=""></h1></div>
@@ -37,7 +37,7 @@ export default class Forecast {
 
     get todayTemplate() {
         return `
-        <div class="col-12">
+        <div class="col-sm-12">
             <h1>
                 ${this.max}
             </h1>
