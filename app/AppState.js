@@ -8,6 +8,8 @@ class AppState extends EventEmitter {
   values = []
   /** @type {Forecast[]} */
   forecasts = []
+  /** @type {Forecast} */
+  today = null
 }
 
 export const ProxyState = new Proxy(new AppState(), {

@@ -12,13 +12,37 @@ function _draw() {
     console.log(ProxyState.forecasts)
 }
 
+function _drawToday() {
+    document.getElementById('today').innerHTML = ProxyState.today.todayTemplate
+}
+
+
+function showPosition(position) {
+    // var x = document.getElementById("demo")
+    // x.innerHTML = "Latitude: " + position.coords.latitude +
+    //     "<br>Longitude: " + position.coords.longitude;
+    const forecast = {
+        lat: position.coords.latitude,
+        lon: position.coords.longitude
+    }
+    weatherService.getForecast(forecast)
+
+}
 
 //public
 export default class WeatherController {
     constructor() {
         //below is the listener watching over forecasts in the proxy state. whenever the data is affected in the forecasts array within the proxy state the listener will then run the _draw function. Data will no always live in the proxy state therefore we do not need to draw on page load...if we needed to we would then also call _draw() above ProxyState.on()
         ProxyState.on("forecasts", _draw)
+        ProxyState.on("today", _drawToday)
         console.log('hello from the weather controller')
+        this.getLocation()
+
+    }
+    getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }
     }
 
 

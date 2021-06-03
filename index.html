@@ -15,33 +15,40 @@
 
 <body>
     <header>
-        
+
     </header>
     <!-- <div id="app"></div> -->
     <main class="container">
         <section class="row m-auto">
-            <div class="col-sm-12 m-auto">
+            <!-- <div class="col-sm-12 m-auto">
                 <h2>Please provide your latitude and longitude for a 7 day weather forecast!</h2>
-            </div>
+            </div> -->
             <div class="col-sm-12 m-auto">
-                <form class="form-inline" onsubmit="app.weatherController.getForecast(event)">
+                <!-- <button onclick="app.weatherController.getLocation()">Grab location</button> -->
+                <!-- <p id="demo"></p> -->
+                <form class="hide form-inline" onsubmit="app.weatherController.getForecast(event)">
                     <div class="form-group">
+                        <p id="latHelp">Please provide us with your cities Latitude</p>
                         <input type="text" name="lat" id="lat" class="form-control" placeholder="Latitude"
-                            aria-describedby="helpId">
+                            aria-describedby="latHelp">
                     </div>
                     <div class="form-group">
+                        <p id="longHelp">Please provide us with your cities Longitude</p>
                         <input type="text" name="lon" id="lon" class="form-control" placeholder="Longitude"
-                            aria-describedby="helpId">
+                            aria-describedby="longHelp">
                     </div>
                     <div class="form-group">
-                        <button class="" type="submit ">Search</button>
+                        <p id="buttonHelp">Use this button to submit your latitude and longitude to recieve your 7 day
+                            forecast</p>
+                        <button type="submit" aria-describedby="buttonHelp">Search</button>
                     </div>
-                    
+
                 </form>
             </div>
         </section>
 
         <!-- forecast will go below! -->
+        <div id="today" class="row margin-top"></div>
         <div id="forecast" class="row margin-top"></div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

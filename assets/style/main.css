@@ -2318,11 +2318,11 @@ textarea.form-control {
   box-shadow: 0 0 0 0.2rem rgba(235, 87, 87, 0.25);
 }
 
-.form-inline {
+/* .form-inline {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-}
+} */
 .form-inline .form-check {
   width: 100%;
 }
