@@ -16,6 +16,9 @@ body {
     background-image: url("https://www.thoughtco.com/thmb/69TU_MD-VIz-QoqcXXvrmm92a0c=/1885x1414/smart/filters:no_upscale()/GettyImages-993959156-9c2533b1ed7a42a2a148b5d30f0340eb.jpg");
     background-size: cover;
     backdrop-filter: blur(40px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
@@ -44,7 +47,7 @@ body {
       max-width: 540px;
     }
   }
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
         .container {
       max-width: 720px;
     }
@@ -53,8 +56,8 @@ body {
         .container {
       max-width: 960px;
     }
-  }
-  @media (min-width: 1200px) {
+  } */
+  @media (min-width: 577px) {
         .container {
       max-width: 1140px;
     }
@@ -178,6 +181,12 @@ body {
 }
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .m-auto {
     margin: auto; 
 }
@@ -207,7 +216,8 @@ body {
     border-radius: 0.25rem;
   } */
 
-  p{
+
+  p, i, h1{
     color: #ffffff;
   }
   
@@ -228,6 +238,18 @@ body {
     border-style: solid;
     border-radius: 0.25rem;
     
+  }
+
+  .text-hot {
+    color: #c0150f;
+  }
+
+  .text-warm {
+    color: orangered;
+  }
+
+  .text-cool {
+    color: deepskyblue;
   }
 
   .form-group {
@@ -268,6 +290,11 @@ body {
   img {
     max-width: 75px;
     max-height: 20px;
+  }
+
+  .main-icon {
+    min-height: 250px;
+    min-width: 300px;
   }
 
   .bg-light {

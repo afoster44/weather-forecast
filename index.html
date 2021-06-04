@@ -9,8 +9,8 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style/main.css"> -->
     <link rel="stylesheet" href="assets/style/secondary.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>gorillamind-weatherapi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
+    <title>gorillamind weather app</title>
 </head>
 
 <body>
@@ -20,6 +20,7 @@
     <!-- <div id="app"></div> -->
     <main class="container">
         <section class="row m-auto">
+            <!-- <i class="fas fa-cloud-showers-heavy"></i> -->
             <!-- <div class="col-sm-12 m-auto">
                 <h2>Please provide your latitude and longitude for a 7 day weather forecast!</h2>
             </div> -->
@@ -46,9 +47,8 @@
                 </form>
             </div>
         </section>
-
         <!-- forecast will go below! -->
-        <div id="today" class="row m-auto margin-bottom"></div>
+        <div id="today" class="row margin-bottom main-view"></div>
         <div id="forecast" class="row m-auto"></div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
