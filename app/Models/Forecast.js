@@ -33,7 +33,7 @@ export default class Forecast {
                     ${this.max < 69.99 ? "text-cool" : ""}">H: <span>${this.max}</span>F</p>
                     <p class="">L: <span>${this.min}</span>F</p>
                     <p>Feels like: <span>${this.feelsLike}</span>F</p>  
-                    <p>Wind speed: <span> ${this.wind}</span> <img src="${this.wind > 10 ? "https://png.pngtree.com/png-vector/20190215/ourlarge/pngtree-vector-wind-icon-png-image_537132.jpg" : " "}" alt="" srcset=""> MPH <i class="${this.direction >= 0 && this.direction <= 89 || this.direction === 360 ? "fas fa-arrow-up" : ""}${this.direction >= 90 && this.direction <= 179 ? "fa fa-arrow-right" : ""} ${this.direction >= 180 && this.direction <= 269 ? "fa fa-arrow-down" : ""} ${this.direction >= 270 && this.direction <= 359 ? "fas fa-arrow-left" : ""}" aria-hidden="true"></i></p>    
+                    <p>Wind speed: <span> ${this.wind}</span> <i class="${this.wind >= 10 ? "fas fa-wind" : ""}" alt="" srcset=""> </i> MPH <i class="${this.direction >= 0 && this.direction <= 89 || this.direction === 360 ? "fas fa-arrow-up" : ""}${this.direction >= 90 && this.direction <= 179 ? "fa fa-arrow-right" : ""} ${this.direction >= 180 && this.direction <= 269 ? "fa fa-arrow-down" : ""} ${this.direction >= 270 && this.direction <= 359 ? "fas fa-arrow-left" : ""}" aria-hidden="true"></i></p>    
                 </div>
             </div>       
         </div>
@@ -50,12 +50,11 @@ export default class Forecast {
             <div class="row form-inline">
             <div class="col-sm-6 d-flex center">
                 <h1> 
-                    
-                    <i class="${this.weather.toLowerCase() === "clouds" ? "fas fa-cloud" : ""} ${this.weather.toLowerCase() === "clear" ? "far fa-sun" : ""} ${this.weather.toLowerCase() === "rain" ? "fas fa-cloud-showers-heavy" : ""}" alt="" srcset=""> </i>
-                     
-                    
-                </h1>
-                           
+                    <i class="${this.weather.toLowerCase() === "clouds" ? "fas fa-cloud" : ""} 
+                              ${this.weather.toLowerCase() === "clear" ? "far fa-sun" : ""} 
+                              ${this.weather.toLowerCase() === "rain" ? "fas fa-cloud-showers-heavy" : ""}" alt="" srcset=""> 
+                    </i>  
+                </h1>          
             </div>
             <div class="col-sm-6 d-flex center"> 
                 <h1> <i class="${this.wind >= 10 ? "fas fa-wind" : ""}" alt="" srcset=""> </i> </h1>

@@ -237,7 +237,6 @@ body {
     border: 2px deepskyblue;
     border-style: solid;
     border-radius: 0.25rem;
-    
   }
 
   .text-hot {
@@ -301,6 +300,8 @@ body {
     background-color: #ffffff;
   }
 
+
+  /* accessibility help */
   #latHelp {
     display: none;
   }
